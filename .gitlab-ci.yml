@@ -43,7 +43,6 @@ fastqc-0119-build:
 
 fastqc-0119-deploy:
   extends: .templateDeploy
-  needs: [fastqc-0119-build]
   variables:
     BASENAME: fastqc
     TAG: 0119
