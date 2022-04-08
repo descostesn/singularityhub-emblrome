@@ -1,20 +1,31 @@
 # See https://docs.gitlab.com/ee/ci/yaml/index.html for all available options
 
 stages:
-  - buildPushImage
+  - build
+  - deploy
 
-
-.template:
-  stage: buildPushImage
-  tags:
-    - docker7
-  image:
+image:
     name: quay.io/singularity/singularity:v3.8.4
     entrypoint: [ "" ]
+
+tags:
+    - docker7
+
+
+.templateBuild:
+  stage: build
+  allow_failure: false
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
   script:
     - singularity build container.sif $RECIPE_PATH/Singularity.$BASENAME-$TAG
-    - singularity push --docker-username gitlab-ci-token --docker-password $CI_JOB_TOKEN container.sif oras://"$CI_REGISTRY_IMAGE"/$BASENAME:$TAG
 
+.templateDeploy:
+  stage: deploy
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+  script:
+    - singularity push --docker-username gitlab-ci-token --docker-password $CI_JOB_TOKEN container.sif oras://"$CI_REGISTRY_IMAGE"/$BASENAME:$TAG
 
 
 #####################
@@ -22,14 +33,16 @@ stages:
 #####################
 
 
-fastqc-0119:
-  extends: .template
+fastqc-0119-build:
+  extends: .templateBuild
   variables:
     BASENAME: fastqc
     TAG: 0119
     RECIPE_PATH: recipes/quality-control/fastqc/
-  only:
-    refs:
-      - main
-    changes:
-      - recipes/quality-control/fastqc/Singularity.fastqc-0119
+
+
+fastqc-0119-deploy:
+  extends: .templateDeploy
+  variables:
+    BASENAME: fastqc
+    TAG: 0119
