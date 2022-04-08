@@ -12,6 +12,8 @@ image:
 .templateBuild:
   stage: build
   allow_failure: false
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
   tags:
     - docker7
   script:
@@ -22,6 +24,8 @@ image:
   stage: deploy
   tags:
     - docker7
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
   script:
     - singularity push --docker-username gitlab-ci-token --docker-password $CI_JOB_TOKEN container.sif oras://"$CI_REGISTRY_IMAGE"/$BASENAME:$TAG
 
@@ -36,9 +40,6 @@ fastqc-0119-build:
     BASENAME: fastqc
     TAG: 0119
     RECIPE_PATH: recipes/quality-control/fastqc/
-  only:
-    changes:
-      - recipes/quality-control/fastqc/Singularity.fastqc-0119
   artifacts:
     paths:
       - container.sif
@@ -51,6 +52,3 @@ fastqc-0119-deploy:
   variables:
     BASENAME: fastqc
     TAG: 0119
-  only:
-    changes:
-      - recipes/quality-control/fastqc/Singularity.fastqc-0119
