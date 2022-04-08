@@ -8,13 +8,12 @@ image:
     name: quay.io/singularity/singularity:v3.8.4
     entrypoint: [ "" ]
 
-tags:
-    - docker7
-
 
 .templateBuild:
   stage: build
   allow_failure: false
+  tags:
+    - docker7
   script:
     - singularity build container.sif $RECIPE_PATH/Singularity.$BASENAME-$TAG
 
