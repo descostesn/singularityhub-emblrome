@@ -14,11 +14,13 @@ tags:
 
 .templateBuild:
   stage: build
-  allow_failure: false
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "push"
   script:
     - singularity build container.sif $RECIPE_PATH/Singularity.$BASENAME-$TAG
+
+.templateDeploy:
+  stage: deploy
+  script:
+    - singularity push --docker-username gitlab-ci-token --docker-password $CI_JOB_TOKEN container.sif oras://"$CI_REGISTRY_IMAGE"/$BASENAME:$TAG
 
 
 #####################
@@ -33,3 +35,9 @@ fastqc-0119-build:
     TAG: 0119
     RECIPE_PATH: recipes/quality-control/fastqc/
 
+
+fastqc-0119-deploy:
+  extends: .templateDeploy
+  variables:
+    BASENAME: fastqc
+    TAG: 0119
