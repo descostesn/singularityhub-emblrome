@@ -4,6 +4,14 @@
 1. [Introduction](#introduction) 
 2. [Pulling](#pulling) 
 3. [Contributing](#contributing)
+    - [Testing your singularity beforehand](#testing-your-singularity-beforehand)
+        - [In Local](#in-local)
+        - [on gitlab](#on-gitlab)
+    - [Adding to repository](#adding-to-repository)
+4. [Style guidelines](#style-guidelines)
+    - [Singularity recipe](#singularity-recipe)
+    - [gitlab ci yml](#gitlab-ci-yaml)
+
 
 ## Introduction
 
@@ -60,7 +68,12 @@ origin  git@git.embl.de:descoste/singularityhub-emblrome.git (push)
 
 5) Set the new URL as the new target. You can find the new URL under the 'clone' button on gitlab. Copy the ssh address and run `git remote set-url origin mynewurl`. For instance `git remote set-url origin git@git.embl.de:descoste/test-singularity.git`.
 6) Check that your repository targets the correct URL by running again `git remote -v`.
+7) push the whole repository to the new location:
 
+```
+git add .
+git push
+```
 
 
 
