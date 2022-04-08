@@ -2,6 +2,7 @@
 
 stages:
   - build
+  - deploy
 
 image:
     name: quay.io/singularity/singularity:v3.8.4
@@ -17,6 +18,13 @@ image:
     - singularity build container.sif $RECIPE_PATH/Singularity.$BASENAME-$TAG
 
 
+.templateDeploy:
+  stage: deploy
+  tags:
+    - docker7
+  script:
+    - singularity push --docker-username gitlab-ci-token --docker-password $CI_JOB_TOKEN container.sif oras://"$CI_REGISTRY_IMAGE"/$BASENAME:$TAG
+
 #####################
 ## Quality control
 #####################
@@ -28,6 +36,16 @@ fastqc-0119-build:
     BASENAME: fastqc
     TAG: 0119
     RECIPE_PATH: recipes/quality-control/fastqc/
+  only:
+    changes:
+      - recipes/quality-control/fastqc/Singularity.fastqc-0119
+
+
+fastqc-0119-deploy:
+  extends: .templateDeploy
+  variables:
+    BASENAME: fastqc
+    TAG: 0119
   only:
     changes:
       - recipes/quality-control/fastqc/Singularity.fastqc-0119
