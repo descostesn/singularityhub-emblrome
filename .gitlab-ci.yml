@@ -51,3 +51,6 @@ fastqc-0119-deploy:
   variables:
     BASENAME: fastqc
     TAG: 0119
+  only:
+    changes:
+      - recipes/quality-control/fastqc/Singularity.fastqc-0119
