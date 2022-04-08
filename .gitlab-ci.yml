@@ -1,6 +1,7 @@
 # See https://docs.gitlab.com/ee/ci/yaml/index.html for all available options
 
-stages: buildPushImage
+stages:
+  - buildPushImage
 
 
 .template:
