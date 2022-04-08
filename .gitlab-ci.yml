@@ -39,10 +39,15 @@ fastqc-0119-build:
   only:
     changes:
       - recipes/quality-control/fastqc/Singularity.fastqc-0119
+  artifacts:
+    paths:
+      - container.sif
+    expire_in: 3 days
 
 
 fastqc-0119-deploy:
   extends: .templateDeploy
+  needs: [fastqc-0119-build]
   variables:
     BASENAME: fastqc
     TAG: 0119
