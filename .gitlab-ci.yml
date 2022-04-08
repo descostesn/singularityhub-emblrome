@@ -6,6 +6,8 @@ stages:
 
 .template:
   stage: buildPushImage
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
   tags:
     - docker7
   image:
