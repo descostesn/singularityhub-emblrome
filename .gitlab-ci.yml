@@ -27,7 +27,7 @@ fastqc-0119:
   variables:
     BASENAME: fastqc
     TAG: 0119
-    RECIPE_PATH: recipes/quality-control/
+    RECIPE_PATH: recipes/quality-control/fastqc/
   only:
     changes:
       - recipes/quality-control/fastqc/Singularity.fastqc-0119
