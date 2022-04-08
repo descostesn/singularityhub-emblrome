@@ -15,7 +15,7 @@ image:
   tags:
     - docker7
   script:
-    - singularity build /builds/descoste/singularityhub-emblrome/container.sif $RECIPE_PATH/Singularity.$BASENAME-$TAG
+    - singularity build container.sif $RECIPE_PATH/Singularity.$BASENAME-$TAG
 
 
 .templateDeploy:
