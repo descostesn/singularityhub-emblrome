@@ -6,8 +6,6 @@ stages:
 
 .template:
   stage: buildPushImage
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "main"'
   tags:
     - docker7
   image:
@@ -31,5 +29,7 @@ fastqc-0119:
     TAG: 0119
     RECIPE_PATH: recipes/quality-control/fastqc/
   only:
+    refs:
+      - main
     changes:
       - recipes/quality-control/fastqc/Singularity.fastqc-0119
