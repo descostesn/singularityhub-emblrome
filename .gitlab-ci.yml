@@ -1,29 +1,29 @@
 # See https://docs.gitlab.com/ee/ci/yaml/index.html for all available options
 
-stages:
-  - buildPushImage
 
-image: 
+.template:
+  stage: buildPushImage
+  tags:
+    - docker7
+  image:
     name: quay.io/singularity/singularity:v3.8.4
-    entrypoint: [""]
+    entrypoint: [ "" ]
+  script:
+    - singularity build container.sif $RECIPE_PATH/Singularity.$BASENAME-$TAG
+    - singularity push --docker-username gitlab-ci-token --docker-password $CI_JOB_TOKEN container.sif oras://"$CI_REGISTRY_IMAGE"/$BASENAME:$TAG
+
+
 
 #####################
 ## Quality control
 #####################
 
 
-build-push-singularity-fastqc:
-  tags:
-    - docker7
-  stage: buildPushImage
+fastqc-0119:
   variables:
     BASENAME: fastqc
     TAG: 0119
     RECIPE_PATH: recipes/quality-control/
-  script:
-    - singularity build container.sif $RECIPE_PATH/Singularity.$BASENAME-$TAG
-    - echo $CI_COMMIT_SHORT_SHA
-    - singularity push --docker-username gitlab-ci-token --docker-password $CI_JOB_TOKEN container.sif oras://"$CI_REGISTRY_IMAGE"/$BASENAME:$TAG
   only:
     changes:
-      - recipes/quality-control/Singularity.fastqc-0119
+      - recipes/quality-control/fastqc/Singularity.fastqc-0119
