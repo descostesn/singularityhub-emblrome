@@ -3,7 +3,7 @@
 
 1. [Introduction](#introduction) 
 2. [Pulling](#pulling) 
-
+3. [Contributing](#contributing)
 
 ## Introduction
 
@@ -39,4 +39,29 @@ singularity pull --docker-username $USERNAME --docker-password $SINGULARITY_DOCK
 8) Edit your `.bashrc` (`emacs -nw ~/.bashrc` or `vim ~/.bashrc`) by adding `export SINGULARITY_DOCKER_PASSWORD="paste_your_copied_access_token_here"` wherever you like.
 9) After closing your editor, run `exec bash`.
 10) Now try to pull a particular singularity following the instructions above.
+
+
+## Contributing
+
+This repository is maintained by Nicolas Descostes and Francesco Tabaro. To add a new singularity recipe, you need to:
+
+1) Clone the repository: `git clone git@git.embl.de:descoste/singularityhub-emblrome.git`
+2) Enter the folder: `cd singularityhub-emblrome/`
+
+In order to test your singularity, you need to redirect the repository to one of your own:
+
+3) Go to gitlab and create a new project: 'test-singularity' (**Unselect 'Initialize repository with a README')
+4) In the `singularityhub-emblrome/`, enter `git remote -v`. You should see:
+
+```
+origin  git@git.embl.de:descoste/singularityhub-emblrome.git (fetch)
+origin  git@git.embl.de:descoste/singularityhub-emblrome.git (push)
+```
+
+5) Set the new URL as the new target. You can find the new URL under the 'clone' button on gitlab. Copy the ssh address and run `git remote set-url origin mynewurl`. For instance `git remote set-url origin git@git.embl.de:descoste/test-singularity.git`.
+6) Check that your repository targets the correct URL by running again `git remote -v`.
+
+
+
+
 
