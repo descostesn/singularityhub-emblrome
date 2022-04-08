@@ -44,9 +44,6 @@ fastqc-0119-build:
     paths:
       - container.sif
     expire_in: 3 days
-  rules:
-    changes:
-      - recipes/quality-control/fastqc/Singularity.fastqc-0119
 
 fastqc-0119-deploy:
   extends: .templateDeploy
@@ -54,6 +51,3 @@ fastqc-0119-deploy:
   variables:
     BASENAME: fastqc
     TAG: 0119
-  rules:
-    changes:
-      - recipes/quality-control/fastqc/Singularity.fastqc-0119
