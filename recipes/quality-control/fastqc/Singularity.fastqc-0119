@@ -7,3 +7,6 @@ From: biocontainers/fastqc:v0.11.9_cv7
 
 %post
     mkdir /cluster /work /tsd /projects
+
+%labels
+    Author Nicolas Descostes
