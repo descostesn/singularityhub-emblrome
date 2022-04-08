@@ -20,6 +20,7 @@
 
 
 fastqc-0119:
+  extends: .template
   variables:
     BASENAME: fastqc
     TAG: 0119
