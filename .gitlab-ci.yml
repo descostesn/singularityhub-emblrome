@@ -25,7 +25,7 @@ image:
   tags:
     - docker7
   rules:
-    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master"'
+    - if: $CI_MERGE_REQUEST_APPROVED
   script:
     - singularity push --docker-username gitlab-ci-token --docker-password $CI_JOB_TOKEN container.sif oras://"$CI_REGISTRY_IMAGE"/$BASENAME:$TAG
 
