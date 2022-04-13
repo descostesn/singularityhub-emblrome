@@ -61,15 +61,12 @@ image:
 # DeepLabCut
 #####################
 
-deeplabcut-2.2.0.2-test:
+deeplabcut-2202-test:
   extends: .templateTest
   variables:
     BASENAME: deeplabcut
-    TAG: 2.2.0.2
+    TAG: 2202
     RECIPE_PATH: recipes/deeplabcut
-  only:
-    changes:
-      - recipes/image-analysis/deeplabcut/Singularity.deeplabcut-2.2.0.2
 
 #####################
 ## Quality control

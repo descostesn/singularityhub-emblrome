@@ -2,11 +2,12 @@ Bootstrap: docker
 From: deeplabcut/deeplabcut:latest-core
 
 %help
-  A Singularity image from the deeplabcut:latest-core Docker. It comes with ResNet weights embedded.
+  A Singularity image from the deeplabcut:latest-core Docker. It comes with ResNet weights embedded. Deeplabcut 2.2.0.2
 
 %labels
   AUTHOR Francesco Tabaro
   VERSION 0.1
+  DEEPLABCUT_VERSION 2.2.0.2
 
 %post
   apt-get update && apt-get install -y curl
