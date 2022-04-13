@@ -61,8 +61,8 @@ image:
 # DeepLabCut
 #####################
 
-deeplabcut-2202-builddeploy:
-  extends: .templateBuildDeploy
+deeplabcut-2.2.0.2-test:
+  extends: .templateTest
   variables:
     BASENAME: deeplabcut
     TAG: 2.2.0.2
