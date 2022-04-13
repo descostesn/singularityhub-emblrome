@@ -10,4 +10,3 @@ From: biocontainers/fastqc:v0.11.9_cv7
 
 %labels
     Author Nicolas Descostes
-
