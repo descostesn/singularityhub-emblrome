@@ -50,7 +50,6 @@ fastqc-0119cv8-test:
     RECIPE_PATH: recipes/quality-control/fastqc/
 
 
-
 #####################
 ## Quality control
 #####################
