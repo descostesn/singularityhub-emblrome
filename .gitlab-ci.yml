@@ -33,12 +33,11 @@ image:
 
 
 fastqc-0119-test:
-  extends: .templateBuild
+  extends: .templateTest
   variables:
     BASENAME: fastqc
     TAG: 0119
     RECIPE_PATH: recipes/quality-control/fastqc/
-    expire_in: 3 days
 
 fastqc-0119-builddeploy:
   extends: .templateBuildDeploy
