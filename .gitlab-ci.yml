@@ -36,17 +36,17 @@ fastqc-0119-test:
   extends: .templateTest
   variables:
     BASENAME: fastqc
-    TAG: 0119
+    TAG: 0119cv7
     RECIPE_PATH: recipes/quality-control/fastqc/
 
 fastqc-0119-builddeploy:
   extends: .templateBuildDeploy
   variables:
     BASENAME: fastqc
-    TAG: 0119
+    TAG: 0119cv7
     RECIPE_PATH: recipes/quality-control/fastqc/
   only:
     changes:
-      - recipes/quality-control/fastqc/Singularity.fastqc-0119
+      - recipes/quality-control/fastqc/Singularity.fastqc-0119cv7
 
 
