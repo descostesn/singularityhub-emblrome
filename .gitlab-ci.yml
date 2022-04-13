@@ -24,7 +24,7 @@ image:
   tags:
     - docker7
   only:
-    - if: $CI_COMMIT_BRANCH == "main"
+    - if: $CI_COMMIT_BRANCH == "main" && $CI_COMMIT_MESSAGE == "deploy"
   script:
     - singularity build container.sif $RECIPE_PATH/Singularity.$BASENAME-$TAG
     - singularity push --docker-username gitlab-ci-token --docker-password $CI_JOB_TOKEN container.sif oras://"$CI_REGISTRY_IMAGE"/$BASENAME:$TAG
