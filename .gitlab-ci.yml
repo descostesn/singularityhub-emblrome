@@ -57,7 +57,19 @@ image:
 #    TAG: 0119cv6
 #    RECIPE_PATH: recipes/quality-control/fastqc/
 
+#####################
+# DeepLabCut
+#####################
 
+deeplabcut-2202-builddeploy:
+  extends: .templateBuildDeploy
+  variables:
+    BASENAME: deeplabcut
+    TAG: 2.2.0.2
+    RECIPE_PATH: recipes/deeplabcut/
+  only:
+    changes:
+      - recipes/deeplabcut/Singularity.deeplabcut-2202
 
 #####################
 ## Quality control
