@@ -23,6 +23,8 @@ image:
   stage: builddeploy
   tags:
     - docker7
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   script:
     - singularity build container.sif $RECIPE_PATH/Singularity.$BASENAME-$TAG
     - singularity push --docker-username gitlab-ci-token --docker-password $CI_JOB_TOKEN container.sif oras://"$CI_REGISTRY_IMAGE"/$BASENAME:$TAG
@@ -48,5 +50,3 @@ fastqc-0119cv7-builddeploy:
   only:
     changes:
       - recipes/quality-control/fastqc/Singularity.fastqc-0119cv7
-
-
