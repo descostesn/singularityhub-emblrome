@@ -4,10 +4,6 @@
 1. [Introduction](#introduction) 
 2. [Pulling](#pulling) 
 3. [Contributing](#contributing)
-    - [Testing your singularity beforehand](#testing-your-singularity-beforehand)
-        - [In Local](#in-local)
-        - [on gitlab](#on-gitlab)
-    - [Adding to repository](#adding-to-repository)
 4. [Style guidelines](#style-guidelines)
     - [Singularity recipe](#singularity-recipe)
     - [gitlab ci yml](#gitlab-ci-yaml)
@@ -16,6 +12,9 @@
 ## Introduction
 
 This repository aims at sharing singularity images among the EMBL community. We try to follow a strict model to provide uniformly designed singularities. Please let us know if we should modify anything.
+
+**Important: Since we do not have a premium account, I tried to find some workaround. We cannot secure completely that master will stay green. Please be careful to strictly follow the instructions.**
+
 
 ## Pulling
 
@@ -51,30 +50,51 @@ singularity pull --docker-username $USERNAME --docker-password $SINGULARITY_DOCK
 
 ## Contributing
 
-This repository is maintained by Nicolas Descostes and Francesco Tabaro. To add a new singularity recipe, you need to:
+This repository is maintained by Nicolas Descostes.
+
+**Important: Since we do not have a premium account, I tried to find some workaround. We cannot secure completely that master will stay green. Please be careful to strictly follow the instructions.**
+
+**Important Bis: Each singularity should contain a single tool. Contact me ahead if you plan otherwise.**
+
+
+To add a new singularity recipe, you need to:
 
 1) Clone the repository: `git clone git@git.embl.de:descoste/singularityhub-emblrome.git`
 2) Enter the folder: `cd singularityhub-emblrome/`
+3) Position yourself on the "submission" branch: `git checkout submission`.
+4) Make sure that the content of the branch is up-to-date: `git reset --hard main`
+5) Add a singularity recipe inside `recipes` in the adapted folder. 
 
-In order to test your singularity, you need to redirect the repository to one of your own:
+**Respect the naming format `Singularity.toolName-tag` (with a upper-case S). Please use common sense to choose the folder**. If you are not sure, please contact me by email or by chat.
 
-3) Go to gitlab and create a new project: 'test-singularity' (**Unselect 'Initialize repository with a README')
-4) In the `singularityhub-emblrome/`, enter `git remote -v`. You should see:
+For instance, if you want to submit fastqc version 0119cv8, your file name will be `Singularity.fastqc-0119cv8`.
 
-```
-origin  git@git.embl.de:descoste/singularityhub-emblrome.git (fetch)
-origin  git@git.embl.de:descoste/singularityhub-emblrome.git (push)
-```
-
-5) Set the new URL as the new target. You can find the new URL under the 'clone' button on gitlab. Copy the ssh address and run `git remote set-url origin mynewurl`. For instance `git remote set-url origin git@git.embl.de:descoste/test-singularity.git`.
-6) Check that your repository targets the correct URL by running again `git remote -v`.
-7) push the whole repository to the new location:
+6) Commit and push to the repository: `git add myrecipe && git commit -m "initial commit" && git push origin submission"
+7) Modify `.gitlab-ci.yml` in the "submission area" using the following template (replace `toolName`, `tag`, and `path_to_recipe_folder`):
 
 ```
-git add .
-git push
+toolName-tag-test:
+  extends: .templateTest
+  variables:
+    BASENAME: toolName
+    TAG: tag
+    RECIPE_PATH: path_to_recipe_folder
 ```
 
+For instance, if you want to submit fastqc version 0119cv8, your rule name will be `fastqc-0119cv8-test` and the path to the recipe `/g/romebioinfo/tmp/singularityhub-emblrome/recipes/quality-control/fastqc`.
 
+
+8) In the following instruction, **please add toolName-tag-test` as a commit message**.
+9) Push the file `.gitlab-ci.yml` to the repository: `git add .gitlab-ci.yml && git commit -m "toolName-tag-test" && git push origin submission`.
+10) Visit this [page](https://git.embl.de/descoste/singularityhub-emblrome/-/merge_requests) to submit a merge request.
+
+- As title: toolName-tag-test
+- description: A one-line sentence to explain what the tool is. Please precise any important information as well.
+- Assignee: Choose Nicolas Descostes
+- **Be careful:** Uncheck the `Delete source branch when merge request is accepted.` before submitting.
+
+11) Now it is time to test the build of your singularity. You will see a gear on the right of `Detached merge request pipeline #32160 waiting for manual action for `. Click on it and hit the play button next to your rule.
+12) In the `CI/CD > jobs` (menu on the left), you can see your job running.
+13) Once your job passes the test (green checkmark), I will merge and deploy your singularity. I will let you know when this is done.
 
 
