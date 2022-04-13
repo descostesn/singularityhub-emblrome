@@ -69,7 +69,7 @@ deeplabcut-2202-builddeploy:
     RECIPE_PATH: recipes/deeplabcut
   only:
     changes:
-      - recipes/deeplabcut/Singularity.deeplabcut-2202
+      - recipes/deeplabcut/Singularity.deeplabcut-2.2.0.2
 
 #####################
 ## Quality control
