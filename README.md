@@ -87,7 +87,7 @@ For instance, if you want to submit fastqc version 0119cv8, your rule name will 
 
 - As title: toolName-tag-test
 - description: A one-line sentence to explain what the tool is. Please precise any important information as well.
-- Assignee: Choose Nicolas Descostes
+- Reviewer: Choose Nicolas Descostes
 - **Be careful:** Uncheck the `Delete source branch when merge request is accepted.` before submitting.
 
 11) Now it is time to test the build of your singularity. You will see a gear on the right of `Detached merge request pipeline #32160 waiting for manual action for `. Click on it and hit the play button next to your rule.
