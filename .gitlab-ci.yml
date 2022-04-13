@@ -69,7 +69,7 @@ deeplabcut-2.2.0.2-test:
     RECIPE_PATH: recipes/deeplabcut
   only:
     changes:
-      - recipes/deeplabcut/Singularity.deeplabcut-2.2.0.2
+      - recipes/image-analysis/deeplabcut/Singularity.deeplabcut-2.2.0.2
 
 #####################
 ## Quality control
