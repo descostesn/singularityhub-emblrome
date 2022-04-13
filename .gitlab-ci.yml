@@ -1,17 +1,16 @@
 # See https://docs.gitlab.com/ee/ci/yaml/index.html for all available options
 
 stages:
-  - build
-  - deploy
+  - test
+  - builddeploy
 
 image:
     name: quay.io/singularity/singularity:v3.8.4
     entrypoint: [ "" ]
 
 
-.templateBuild:
-  stage: build
-  allow_failure: false
+.templateTest:
+  stage: test
   rules:
     - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
   tags:
@@ -20,13 +19,12 @@ image:
     - singularity build container.sif $RECIPE_PATH/Singularity.$BASENAME-$TAG
 
 
-.templateDeploy:
-  stage: deploy
+.templateBuildDeploy:
+  stage: builddeploy
   tags:
     - docker7
-  rules:
-    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
   script:
+    - singularity build container.sif $RECIPE_PATH/Singularity.$BASENAME-$TAG
     - singularity push --docker-username gitlab-ci-token --docker-password $CI_JOB_TOKEN container.sif oras://"$CI_REGISTRY_IMAGE"/$BASENAME:$TAG
 
 #####################
@@ -34,20 +32,22 @@ image:
 #####################
 
 
-fastqc-0119-build:
+fastqc-0119-test:
   extends: .templateBuild
   variables:
     BASENAME: fastqc
     TAG: 0119
     RECIPE_PATH: recipes/quality-control/fastqc/
-  artifacts:
-    paths:
-      - container.sif
     expire_in: 3 days
 
-fastqc-0119-deploy:
-  extends: .templateDeploy
-  needs: [fastqc-0119-build]
+fastqc-0119-builddeploy:
+  extends: .templateBuildDeploy
   variables:
     BASENAME: fastqc
     TAG: 0119
+    RECIPE_PATH: recipes/quality-control/fastqc/
+  only:
+    changes:
+      - recipes/quality-control/fastqc/Singularity.fastqc-0119
+
+
