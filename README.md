@@ -4,9 +4,6 @@
 1. [Introduction](#introduction) 
 2. [Pulling](#pulling) 
 3. [Contributing](#contributing)
-4. [Style guidelines](#style-guidelines)
-    - [Singularity recipe](#singularity-recipe)
-    - [gitlab ci yml](#gitlab-ci-yaml)
 
 
 ## Introduction
