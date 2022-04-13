@@ -42,13 +42,6 @@ image:
 #    TAG: 0119cv7
 #    RECIPE_PATH: recipes/quality-control/fastqc/
 
-fastqc-0119cv8-test:
-  extends: .templateTest
-  variables:
-    BASENAME: fastqc
-    TAG: 0119cv8
-    RECIPE_PATH: recipes/quality-control/fastqc/
-
 
 
 #####################
