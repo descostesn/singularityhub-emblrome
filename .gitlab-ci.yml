@@ -50,12 +50,12 @@ image:
 #    TAG: 0119cv8
 #    RECIPE_PATH: recipes/quality-control/fastqc/
 
-fastqc-0119cv6-test:
-  extends: .templateTest
-  variables:
-    BASENAME: fastqc
-    TAG: 0119cv6
-    RECIPE_PATH: recipes/quality-control/fastqc/
+#fastqc-0119cv6-test:
+#  extends: .templateTest
+#  variables:
+#    BASENAME: fastqc
+#    TAG: 0119cv6
+#    RECIPE_PATH: recipes/quality-control/fastqc/
 
 
 
@@ -83,3 +83,13 @@ fastqc-0119cv8-builddeploy:
   only:
     changes:
       - recipes/quality-control/fastqc/Singularity.fastqc-0119cv8
+
+fastqc-0119cv6-builddeploy:
+  extends: .templateBuildDeploy
+  variables:
+    BASENAME: fastqc
+    TAG: 0119cv6
+    RECIPE_PATH: recipes/quality-control/fastqc/
+  only:
+    changes:
+      - recipes/quality-control/fastqc/Singularity.fastqc-0119cv6
