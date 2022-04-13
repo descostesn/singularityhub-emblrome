@@ -32,14 +32,14 @@ image:
 #####################
 
 
-fastqc-0119-test:
+fastqc-0119cv7-test:
   extends: .templateTest
   variables:
     BASENAME: fastqc
     TAG: 0119cv7
     RECIPE_PATH: recipes/quality-control/fastqc/
 
-fastqc-0119-builddeploy:
+fastqc-0119cv7-builddeploy:
   extends: .templateBuildDeploy
   variables:
     BASENAME: fastqc
