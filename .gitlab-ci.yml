@@ -31,7 +31,7 @@ image:
     - singularity push --docker-username gitlab-ci-token --docker-password $CI_JOB_TOKEN container.sif oras://"$CI_REGISTRY_IMAGE"/$BASENAME:$TAG
 
 #####################
-## Quality control
+## Submission area
 #####################
 
 
@@ -42,6 +42,19 @@ image:
 #    TAG: 0119cv7
 #    RECIPE_PATH: recipes/quality-control/fastqc/
 
+fastqc-0119cv8-test:
+  extends: .templateTest
+  variables:
+    BASENAME: fastqc
+    TAG: 0119cv8
+    RECIPE_PATH: recipes/quality-control/fastqc/
+
+
+
+#####################
+## Quality control
+#####################
+
 fastqc-0119cv7-builddeploy:
   extends: .templateBuildDeploy
   variables:
@@ -51,3 +64,4 @@ fastqc-0119cv7-builddeploy:
   only:
     changes:
       - recipes/quality-control/fastqc/Singularity.fastqc-0119cv7
+
