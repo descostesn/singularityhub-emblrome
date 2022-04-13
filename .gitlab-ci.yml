@@ -23,7 +23,7 @@ image:
   stage: builddeploy
   tags:
     - docker7
-  rules:
+  only:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   script:
     - singularity build container.sif $RECIPE_PATH/Singularity.$BASENAME-$TAG
