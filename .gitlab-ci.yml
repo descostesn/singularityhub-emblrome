@@ -66,7 +66,7 @@ deeplabcut-2202-test:
   variables:
     BASENAME: deeplabcut
     TAG: 2202
-    RECIPE_PATH: recipes/deeplabcut
+    RECIPE_PATH: recipes/image-analysis/deeplabcut
 
 #####################
 ## Quality control
