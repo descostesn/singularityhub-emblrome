@@ -34,39 +34,11 @@ image:
 ## Submission area
 #####################
 
-
-#fastqc-0119cv7-test:
-#  extends: .templateTest
-#  variables:
-#    BASENAME: fastqc
-#    TAG: 0119cv7
-#    RECIPE_PATH: recipes/quality-control/fastqc/
-
-
-#fastqc-0119cv8-test:
-#  extends: .templateTest
-#  variables:
-#    BASENAME: fastqc
-#    TAG: 0119cv8
-#    RECIPE_PATH: recipes/quality-control/fastqc/
-
-#fastqc-0119cv6-test:
-#  extends: .templateTest
-#  variables:
-#    BASENAME: fastqc
-#    TAG: 0119cv6
-#    RECIPE_PATH: recipes/quality-control/fastqc/
+## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
 
 #####################
-# DeepLabCut
+# Image analysis
 #####################
-
-#deeplabcut-2202-test:
-#  extends: .templateTest
-#  variables:
-#    BASENAME: deeplabcut
-#    TAG: 2202
-#    RECIPE_PATH: recipes/image-analysis/deeplabcut
 
 include:
   - local: "yaml-files/image-analysis/deeplabcut-deploy.yaml"
