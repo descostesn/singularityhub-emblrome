@@ -44,6 +44,26 @@ include:
   - local: "yaml-files/image-analysis/deeplabcut-deploy.yaml"
 
 #####################
+# Mapping
+#####################
+
+bowtie2-241cv1-test:
+  extends: .templateTest
+  variables:
+    BASENAME: bowtie2
+    TAG: 241cv1
+    RECIPE_PATH: recipes/mapping/bowtie2
+
+
+bowtie2-245-test:
+  extends: .templateTest
+  variables:
+    BASENAME: bowtie2
+    TAG: 245
+    RECIPE_PATH: recipes/mapping/bowtie2
+
+
+#####################
 ## Quality control
 #####################
 
