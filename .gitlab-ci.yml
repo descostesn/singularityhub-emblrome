@@ -83,33 +83,5 @@ deeplabcut-2202-builddeploy:
 ## Quality control
 #####################
 
-fastqc-0119cv7-builddeploy:
-  extends: .templateBuildDeploy
-  variables:
-    BASENAME: fastqc
-    TAG: 0119cv7
-    RECIPE_PATH: recipes/quality-control/fastqc
-  only:
-    changes:
-      - recipes/quality-control/fastqc/Singularity.fastqc-0119cv7
-
-
-fastqc-0119cv8-builddeploy:
-  extends: .templateBuildDeploy
-  variables:
-    BASENAME: fastqc
-    TAG: 0119cv8
-    RECIPE_PATH: recipes/quality-control/fastqc
-  only:
-    changes:
-      - recipes/quality-control/fastqc/Singularity.fastqc-0119cv8
-
-fastqc-0119cv6-builddeploy:
-  extends: .templateBuildDeploy
-  variables:
-    BASENAME: fastqc
-    TAG: 0119cv6
-    RECIPE_PATH: recipes/quality-control/fastqc
-  only:
-    changes:
-      - recipes/quality-control/fastqc/Singularity.fastqc-0119cv6
+include:
+  - local: "yaml-files/quality-controls/fastqc-deploy.yaml"
