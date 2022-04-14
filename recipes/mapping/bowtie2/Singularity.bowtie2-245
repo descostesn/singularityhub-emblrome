@@ -1,6 +1,5 @@
-BootStrap: debootstrap
-OSVersion: hirsute
-MirrorURL: http://us.archive.ubuntu.com/ubuntu/
+BootStrap: docker
+From: ubuntu:hirsute
 
 %help
     This singularity install bowtie2 v2.4.5
