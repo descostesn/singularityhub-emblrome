@@ -24,4 +24,3 @@ From: deeplabcut/deeplabcut:latest-core
 
 %runscript
   exec /usr/bin/python3 "$@"
-
