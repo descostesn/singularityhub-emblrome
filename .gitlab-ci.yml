@@ -30,35 +30,9 @@ image:
     - singularity build container.sif $RECIPE_PATH/Singularity.$BASENAME-$TAG
     - singularity push --docker-username gitlab-ci-token --docker-password $CI_JOB_TOKEN container.sif oras://"$CI_REGISTRY_IMAGE"/$BASENAME:$TAG
 
-#####################
-## Submission area
-#####################
-
-
-#fastqc-0119cv7-test:
-#  extends: .templateTest
-#  variables:
-#    BASENAME: fastqc
-#    TAG: 0119cv7
-#    RECIPE_PATH: recipes/quality-control/fastqc/
-
-
-#fastqc-0119cv8-test:
-#  extends: .templateTest
-#  variables:
-#    BASENAME: fastqc
-#    TAG: 0119cv8
-#    RECIPE_PATH: recipes/quality-control/fastqc/
-
-#fastqc-0119cv6-test:
-#  extends: .templateTest
-#  variables:
-#    BASENAME: fastqc
-#    TAG: 0119cv6
-#    RECIPE_PATH: recipes/quality-control/fastqc/
 
 #####################
-# DeepLabCut
+# Image analysis
 #####################
 
 #deeplabcut-2202-test:
@@ -83,33 +57,28 @@ deeplabcut-2202-builddeploy:
 ## Quality control
 #####################
 
-fastqc-0119cv7-builddeploy:
-  extends: .templateBuildDeploy
-  variables:
-    BASENAME: fastqc
-    TAG: 0119cv7
-    RECIPE_PATH: recipes/quality-control/fastqc
-  only:
-    changes:
-      - recipes/quality-control/fastqc/Singularity.fastqc-0119cv7
+#fastqc-0119cv7-test:
+#  extends: .templateTest
+#  variables:
+#    BASENAME: fastqc
+#    TAG: 0119cv7
+#    RECIPE_PATH: recipes/quality-control/fastqc/
 
 
-fastqc-0119cv8-builddeploy:
-  extends: .templateBuildDeploy
-  variables:
-    BASENAME: fastqc
-    TAG: 0119cv8
-    RECIPE_PATH: recipes/quality-control/fastqc
-  only:
-    changes:
-      - recipes/quality-control/fastqc/Singularity.fastqc-0119cv8
+#fastqc-0119cv8-test:
+#  extends: .templateTest
+#  variables:
+#    BASENAME: fastqc
+#    TAG: 0119cv8
+#    RECIPE_PATH: recipes/quality-control/fastqc/
 
-fastqc-0119cv6-builddeploy:
-  extends: .templateBuildDeploy
-  variables:
-    BASENAME: fastqc
-    TAG: 0119cv6
-    RECIPE_PATH: recipes/quality-control/fastqc
-  only:
-    changes:
-      - recipes/quality-control/fastqc/Singularity.fastqc-0119cv6
+#fastqc-0119cv6-test:
+#  extends: .templateTest
+#  variables:
+#    BASENAME: fastqc
+#    TAG: 0119cv6
+#    RECIPE_PATH: recipes/quality-control/fastqc/
+
+
+include:
+  - local: yaml-files/quality-control/fastqc-deploy.yaml
