@@ -84,4 +84,4 @@ deeplabcut-2202-builddeploy:
 #####################
 
 include:
-  - local: "yaml-files/quality-controls/fastqc-deploy.yaml"
+  - local: "yaml-files/quality-control/fastqc-deploy.yaml"
