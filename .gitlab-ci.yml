@@ -68,16 +68,8 @@ image:
 #    TAG: 2202
 #    RECIPE_PATH: recipes/image-analysis/deeplabcut
 
-deeplabcut-2202-builddeploy:
-  extends: .templateBuildDeploy
-  variables:
-    BASENAME: deeplabcut
-    TAG: 2202
-    RECIPE_PATH: recipes/image-analysis/deeplabcut
-  only:
-    changes:
-      - recipes/image-analysis/deeplabcut/Singularity.deeplabcut-2202
-
+include:
+  - local: "yaml-files/image-analysis/deeplabcut-deploy.yaml"
 
 #####################
 ## Quality control
