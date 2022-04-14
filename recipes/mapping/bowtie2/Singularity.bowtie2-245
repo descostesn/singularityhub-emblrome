@@ -1,27 +1,12 @@
-BootStrap: docker
-From: ubuntu:hirsute
+Bootstrap: docker
+From: quay.io/biocontainers/bowtie2:2.4.5--py36hfca12d5_2
 
-%help
-    This singularity install bowtie2 v2.4.5
+%runscript
+    echo "Running container quay.io/biocontainers/bowtie2:2.4.5--py36hfca12d5_2, Bowtie v2.4.5"
+    exec /bin/bash "$@"
 
 %post
-
-    # ~~~~~~ General setup and folder creation ~~~~~~ #
-    
-    apt-get update && apt-get install -y wget bzip2 debootstrap
-    
-    # ~~~~~ MINICONDA 3.4.0.5 ~~~~~ #
-    wget https://repo.anaconda.com/miniconda/Miniconda3-4.7.12.1-Linux-x86_64.sh && \
-    bash Miniconda3-4.7.12.1-Linux-x86_64.sh -b -p /conda && \
-    rm -f Miniconda3-4.7.12.1-Linux-x86_64.sh
-    export PATH="/conda/bin:${PATH}"
-       
-    # ~~~~~ bowtie2 2.4.5 ~~~~~ #
-    conda install -y -c bioconda bowtie2=2.4.5
-    
-%environment
-    export PATH="${PATH}:/conda/bin"
+    mkdir /cluster /work /tsd /projects
 
 %labels
     Author Nicolas Descostes
-    Version v0.0.1
