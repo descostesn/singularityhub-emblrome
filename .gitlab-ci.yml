@@ -36,20 +36,6 @@ image:
 
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
 
-bowtie2-241cv1-test:
-  extends: .templateTest
-  variables:
-    BASENAME: bowtie2
-    TAG: 241cv1
-    RECIPE_PATH: recipes/quality-control/bowtie2
-
-bowtie2-245-test:
-  extends: .templateTest
-  variables:
-    BASENAME: bowtie2
-    TAG: 245
-    RECIPE_PATH: recipes/quality-control/bowtie2
-
 
 #####################
 # Image analysis
@@ -64,3 +50,5 @@ include:
 
 include:
   - local: "yaml-files/quality-control/fastqc-deploy.yaml"
+  - local: "yaml-files/quality-control/bowtie2-deploy.yaml"
+  
