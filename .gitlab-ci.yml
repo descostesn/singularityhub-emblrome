@@ -44,7 +44,7 @@ include:
   - local: "yaml-files/image-analysis/deeplabcut-deploy.yaml"
 
 #####################
-## Quality control
+# Mapping
 #####################
 
 include:
