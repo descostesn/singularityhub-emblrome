@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: globusgenomics/deeptools:3.5.1--py_0
+From: globusgenomics/deeptools:3.5.0--py_0
 
 %runscript
     echo "Running container globusgenomics/deeptools:3.5.1--py_0, deeptools v3.5.1"
