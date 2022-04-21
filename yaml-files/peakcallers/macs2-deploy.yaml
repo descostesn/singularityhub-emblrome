@@ -6,4 +6,4 @@ macs2-2271-builddeploy:
     RECIPE_PATH: recipes/peakcallers/macs2
   only:
     changes:
-      - recipes/peakcallers/hiddendomains/Singularity.macs2-2271
+      - recipes/peakcallers/macs2/Singularity.macs2-2271
