@@ -68,9 +68,6 @@ include:
 include:
   - local: "yaml-files/analysis-suites/deeptools-deploy.yaml"
 
-include:
-  - local: "yaml-files/analysis-suites/picardtools-deploy.yaml"
-
 
 #####################
 # Peaks callers
