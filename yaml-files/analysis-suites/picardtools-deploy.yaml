@@ -7,4 +7,3 @@ picardtools-2221-builddeploy:
   only:
     changes:
       - recipes/analysis-suites/picardtools/Singularity.picardtools-2221
-
