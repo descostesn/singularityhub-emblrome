@@ -67,7 +67,16 @@ include:
 
 include:
   - local: "yaml-files/analysis-suites/deeptools-deploy.yaml"
-  - local: "yaml-files/analysis-suites/picardtools-deploy.yaml"
+
+picardtools-2221-builddeploy:
+  extends: .templateBuildDeploy
+  variables:
+    BASENAME: picardtools
+    TAG: 2221
+    RECIPE_PATH: recipes/analysis-suites/picardtools
+  only:
+    changes:
+      - recipes/analysis-suites/picardtools/Singularity.picardtools-2221
 
 
 #####################
