@@ -36,6 +36,7 @@ image:
 
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
 
+
 picardtools-2221-test:
   extends: .templateTest
   variables:
