@@ -36,12 +36,14 @@ image:
 
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
 
+
 samtools-114-test:
   extends: .templateTest
   variables:
     BASENAME: samtools
     TAG: 114
     RECIPE_PATH: recipes/analysissuites/samtools
+
 
 #####################
 # Image analysis
