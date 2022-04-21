@@ -61,14 +61,14 @@ macs2-2271-test:
 picardtools-2221-test:
   extends: .templateTest
   variables:
-    BASENAME: picardtool
+    BASENAME: picardtools
     TAG: 2221
     RECIPE_PATH: recipes/analysis-suites/picardtools
 
 picardtools-2271-test:
   extends: .templateTest
   variables:
-    BASENAME: picardtool
+    BASENAME: picardtools
     TAG: 2227
     RECIPE_PATH: recipes/analysis-suites/picardtools
 
