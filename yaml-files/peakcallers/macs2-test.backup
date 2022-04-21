@@ -1,0 +1,6 @@
+macs2-2271-test:
+  extends: .templateTest
+  variables:
+    BASENAME: macs2
+    TAG: 2271
+    RECIPE_PATH: recipes/peakcallers/macs2
