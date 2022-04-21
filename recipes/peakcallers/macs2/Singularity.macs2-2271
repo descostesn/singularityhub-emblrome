@@ -7,3 +7,6 @@ From: dceoy/macs2:latest
 
 %post
     mkdir /cluster /work /tsd /projects
+
+%labels
+    Author Nicolas Descostes

@@ -1,0 +1,9 @@
+macs2-2271-builddeploy:
+  extends: .templateBuildDeploy
+  variables:
+    BASENAME: macs2
+    TAG: 2271
+    RECIPE_PATH: recipes/peakcallers/macs2
+  only:
+    changes:
+      - recipes/peakcallers/macs2/Singularity.macs2-2271

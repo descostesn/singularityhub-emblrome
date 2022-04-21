@@ -1,0 +1,6 @@
+hiddendomains-31-test:
+  extends: .templateTest
+  variables:
+    BASENAME: hiddendomains
+    TAG: 31
+    RECIPE_PATH: recipes/peakcallers/hiddendomains
