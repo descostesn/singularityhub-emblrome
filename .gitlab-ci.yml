@@ -36,7 +36,43 @@ image:
 
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
 
+parallelfastqdump-063-test:
+  extends: .templateTest
+  variables:
+    BASENAME: parallelfastqdump
+    TAG: 063
+    RECIPE_PATH: recipes/fastq-operations/parallelfastqdump
 
+hiddendomains-31-test:
+  extends: .templateTest
+  variables:
+    BASENAME: hiddendomains
+    TAG: 31
+    RECIPE_PATH: recipes/peakcallers/hiddendomains
+
+macs2-2271-test:
+  extends: .templateTest
+  variables:
+    BASENAME: macs2
+    TAG: 2271
+    RECIPE_PATH: recipes/peakcallers/macs2
+
+
+picardtools-2221-test:
+  extends: .templateTest
+  variables:
+    BASENAME: picardtool
+    TAG: 2221
+    RECIPE_PATH: recipes/analysis-suites/picardtools
+
+picardtools-2271-test:
+  extends: .templateTest
+  variables:
+    BASENAME: picardtool
+    TAG: 2227
+    RECIPE_PATH: recipes/analysis-suites/picardtools
+
+    
 #####################
 # Image analysis
 #####################
