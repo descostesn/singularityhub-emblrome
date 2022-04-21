@@ -10,3 +10,4 @@ From: quay.io/biocontainers/bowtie2:2.4.5--py36hfca12d5_2
 
 %labels
     Author Nicolas Descostes
+

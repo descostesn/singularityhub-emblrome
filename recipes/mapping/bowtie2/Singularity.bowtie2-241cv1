@@ -10,3 +10,4 @@ From: biocontainers/bowtie2:v2.4.1_cv1
 
 %labels
     Author Nicolas Descostes
+
