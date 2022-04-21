@@ -57,4 +57,3 @@ From: ubuntu:xenial
 %labels
     Author Nicolas Descostes
     Version v0.0.5
-
