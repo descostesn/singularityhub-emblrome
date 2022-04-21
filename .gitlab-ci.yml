@@ -45,10 +45,16 @@ include:
   - local: "yaml-files/image-analysis/deeplabcut-deploy.yaml"
 
 #####################
-# Mapping
+# Quality control
 #####################
 
 include:
   - local: "yaml-files/quality-control/fastqc-deploy.yaml"
-  - local: "yaml-files/quality-control/bowtie2-deploy.yaml"
-  
+
+
+#####################
+# Mapping
+#####################
+
+include:
+  - local: "yaml-files/mapping/bowtie2-deploy.yaml"
