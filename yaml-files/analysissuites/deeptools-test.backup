@@ -3,4 +3,4 @@ deeptools-351-test:
   variables:
     BASENAME: deeptools
     TAG: 351
-    RECIPE_PATH: recipes/analysis-suites/deeptools
+    RECIPE_PATH: recipes/analysissuites/deeptools

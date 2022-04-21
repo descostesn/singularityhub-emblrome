@@ -3,7 +3,7 @@ deeptools-351-builddeploy:
   variables:
     BASENAME: deeptools
     TAG: 351
-    RECIPE_PATH: recipes/analysis-suites/deeptools
+    RECIPE_PATH: recipes/analysissuites/deeptools
   only:
     changes:
-      - recipes/analysis-suites/deeptools/Singularity.deeptools-351
+      - recipes/analysissuites/deeptools/Singularity.deeptools-351
