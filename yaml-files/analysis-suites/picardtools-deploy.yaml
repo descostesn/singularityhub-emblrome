@@ -6,4 +6,4 @@ picardtools-2221-builddeploy:
     RECIPE_PATH: recipes/analysis-suites/picardtools
   only:
     changes:
-       recipes/analysis-suites/picardtools/Singularity.picardtools-2221
+      - recipes/analysis-suites/picardtools/Singularity.picardtools-2221
