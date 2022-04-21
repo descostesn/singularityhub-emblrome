@@ -1,0 +1,9 @@
+hiddendomains-31-builddeploy:
+  extends: .templateBuildDeploy
+  variables:
+    BASENAME: hiddendomains
+    TAG: 31
+    RECIPE_PATH: recipes/peakcallers/hiddendomains
+  only:
+    changes:
+      - recipes/peakcallers/hiddendomains/Singularity.hiddendomains-31
