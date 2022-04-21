@@ -1,8 +1,8 @@
 Bootstrap: docker
-From: quay.io/biocontainers/deeptools:3.5.1--py_0
+From: globusgenomics/deeptools:3.5.1--py_0
 
 %runscript
-    echo "Running container quay.io/biocontainers/deeptools:3.5.1--py_0, deeptools v3.5.1"
+    echo "Running container globusgenomics/deeptools:3.5.1--py_0, deeptools v3.5.1"
     exec /bin/bash "$@"
 
 %post
