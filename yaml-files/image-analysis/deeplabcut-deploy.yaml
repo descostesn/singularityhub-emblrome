@@ -6,4 +6,4 @@ deeplabcut-2202-builddeploy:
     RECIPE_PATH: recipes/image-analysis/deeplabcut
   only:
     changes:
-      - recipes/image-analysis/deeplabcut/Singularity.deeplabcut-2202
+       recipes/image-analysis/deeplabcut/Singularity.deeplabcut-2202
