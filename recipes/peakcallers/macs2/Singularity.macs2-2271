@@ -1,0 +1,12 @@
+Bootstrap: docker
+From: biocontainers/macs2:2.2.7.1--py39hbf8eff0_4
+
+%runscript
+    echo "Running container biocontainers/macs2:2.2.7.1--py39hbf8eff0_4, macs2 v2.2.7.1"
+    exec /bin/bash "$@"
+
+%post
+    mkdir /cluster /work /tsd /projects
+
+%labels
+    Author Nicolas Descostes
