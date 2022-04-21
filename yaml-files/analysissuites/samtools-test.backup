@@ -1,0 +1,7 @@
+
+samtools-114-test:
+  extends: .templateTest
+  variables:
+    BASENAME: samtools
+    TAG: 114
+    RECIPE_PATH: recipes/analysissuites/samtools

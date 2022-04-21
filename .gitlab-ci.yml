@@ -37,14 +37,6 @@ image:
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
 
 
-samtools-114-test:
-  extends: .templateTest
-  variables:
-    BASENAME: samtools
-    TAG: 114
-    RECIPE_PATH: recipes/analysissuites/samtools
-
-
 #####################
 # Image analysis
 #####################
@@ -75,6 +67,7 @@ include:
 
 include:
   - local: "yaml-files/analysissuites/deeptools-deploy.yaml"
+  - local: "yaml-files/analysissuites/samtools-deploy.yaml"
 
 
 #####################
