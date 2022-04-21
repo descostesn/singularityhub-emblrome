@@ -6,4 +6,4 @@ deeptools-351-builddeploy:
     RECIPE_PATH: recipes/analysissuites/deeptools
   only:
     changes:
-       recipes/analysissuites/deeptools/Singularity.deeptools-351
+      - recipes/analysissuites/deeptools/Singularity.deeptools-351
