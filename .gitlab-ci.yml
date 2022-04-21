@@ -69,7 +69,7 @@ picardtools-2271-test:
   extends: .templateTest
   variables:
     BASENAME: picardtools
-    TAG: 2227
+    TAG: 2271
     RECIPE_PATH: recipes/analysis-suites/picardtools
 
     
