@@ -6,4 +6,4 @@ hiddendomains-31-builddeploy:
     RECIPE_PATH: recipes/peakcallers/hiddendomains
   only:
     changes:
-       recipes/peakcallers/hiddendomains/Singularity.hiddendomains-31
+      - recipes/peakcallers/hiddendomains/Singularity.hiddendomains-31
