@@ -36,14 +36,6 @@ image:
 
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
 
-
-picardtools-2221-test:
-  extends: .templateTest
-  variables:
-    BASENAME: picardtools
-    TAG: 2221
-    RECIPE_PATH: recipes/analysis-suites/picardtools
-
     
 #####################
 # Image analysis
@@ -72,8 +64,9 @@ include:
 # Analysis suites
 #####################
 
+
 include:
-  - local: "yaml-files/analysis-suites/deeptools-deploy.yaml"
+  - local: "yaml-files/analysissuites/deeptools-deploy.yaml"
 
 
 #####################

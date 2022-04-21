@@ -1,0 +1,9 @@
+deeptools-351-builddeploy:
+  extends: .templateBuildDeploy
+  variables:
+    BASENAME: deeptools
+    TAG: 351
+    RECIPE_PATH: recipes/analysissuites/deeptools
+  only:
+    changes:
+      - recipes/analysissuites/deeptools/Singularity.deeptools-351
