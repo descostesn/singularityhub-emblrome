@@ -25,4 +25,3 @@ From: ubuntu:focal
 %labels
     Author Nicolas Descostes
     Version v0.0.1
-
