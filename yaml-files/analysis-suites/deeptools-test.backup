@@ -1,0 +1,6 @@
+deeptools-351-test:
+  extends: .templateTest
+  variables:
+    BASENAME: deeptools
+    TAG: 351
+    RECIPE_PATH: recipes/analysis-suites/deeptools
