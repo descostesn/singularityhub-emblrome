@@ -36,11 +36,11 @@ image:
 
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
 
-deeptools-350-test:
+deeptools-351-test:
   extends: .templateTest
   variables:
     BASENAME: deeptools
-    TAG: 350
+    TAG: 351
     RECIPE_PATH: recipes/analysis-suites/deeptools
 
 #####################
