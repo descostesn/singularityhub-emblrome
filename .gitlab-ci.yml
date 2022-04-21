@@ -75,3 +75,4 @@ include:
 
 include:
   - local: "yaml-files/peakcallers/hiddendomains-deploy.yaml"
+  - local: "yaml-files/peakcallers/macs2-deploy.yaml"
