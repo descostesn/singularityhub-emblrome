@@ -3,18 +3,18 @@ bowtie2-245-builddeploy:
   variables:
     BASENAME: bowtie2
     TAG: 245
-    RECIPE_PATH: recipes/quality-control/bowtie2
+    RECIPE_PATH: recipes/mapping/bowtie2
   only:
     changes:
-      - recipes/quality-control/bowtie2/Singularity.bowtie2-245
+      - recipes/mapping/bowtie2/Singularity.bowtie2-245
 
 bowtie2-241cv1-builddeploy:
   extends: .templateBuildDeploy
   variables:
     BASENAME: bowtie2
     TAG: 241cv1
-    RECIPE_PATH: recipes/quality-control/bowtie2
+    RECIPE_PATH: recipes/mapping/bowtie2
   only:
     changes:
-      - recipes/quality-control/bowtie2/Singularity.bowtie2-241cv1
+      - recipes/mapping/bowtie2/Singularity.bowtie2-241cv1
 
