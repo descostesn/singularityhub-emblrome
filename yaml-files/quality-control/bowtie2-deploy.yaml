@@ -1,0 +1,20 @@
+bowtie2-245-builddeploy:
+  extends: .templateBuildDeploy
+  variables:
+    BASENAME: bowtie2
+    TAG: 245
+    RECIPE_PATH: recipes/quality-control/bowtie2
+  only:
+    changes:
+      - recipes/quality-control/bowtie2/Singularity.bowtie2-245
+
+bowtie2-241cv1-builddeploy:
+  extends: .templateBuildDeploy
+  variables:
+    BASENAME: bowtie2
+    TAG: 241cv1
+    RECIPE_PATH: recipes/quality-control/bowtie2
+  only:
+    changes:
+      - recipes/quality-control/bowtie2/Singularity.bowtie2-241cv1
+
