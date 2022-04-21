@@ -7,3 +7,6 @@ From: bschiffthaler/samtools:1.14
 
 %post
     mkdir /cluster /work /tsd /projects
+
+%labels
+    Author Nicolas Descostes
