@@ -36,15 +36,6 @@ image:
 
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
 
-
-parallelfastqdump-063-test:
-  extends: .templateTest
-  variables:
-    BASENAME: parallelfastqdump
-    TAG: v063
-    RECIPE_PATH: recipes/fastq-operations/parallelfastqdump
-
-
 #####################
 ## Include
 #####################
@@ -55,6 +46,11 @@ include:
   # Quality control
   #####################
   - local: "yaml-files/quality-control/fastqc-deploy.yaml"
+
+  #####################
+  # fastq operations
+  #####################
+  - local: "yaml-files/fastq-operations/parallelfastqdump-deploy.yaml"
 
   #####################
   # Analysis suites
