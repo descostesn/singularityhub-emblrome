@@ -46,3 +46,4 @@ From: ubuntu:bionic
 %labels
 	Author Nicolas Descostes
 	Version v0.0.1
+
