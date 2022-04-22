@@ -36,50 +36,37 @@ image:
 
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
 
-samtools-115-test:
-  extends: .templateTest
-  variables:
-    BASENAME: samtools
-    TAG: 115
-    RECIPE_PATH: recipes/analysissuites/samtools
 
 #####################
-# Image analysis
+## Include
 #####################
 
 include:
-  - local: "yaml-files/image-analysis/deeplabcut-deploy.yaml"
 
-#####################
-# Quality control
-#####################
-
-include:
+  #####################
+  # Quality control
+  #####################
   - local: "yaml-files/quality-control/fastqc-deploy.yaml"
 
-
-#####################
-# Mapping
-#####################
-
-include:
-  - local: "yaml-files/mapping/bowtie2-deploy.yaml"
-
-
-#####################
-# Analysis suites
-#####################
-
-
-include:
+  #####################
+  # Analysis suites
+  #####################
   - local: "yaml-files/analysissuites/deeptools-deploy.yaml"
   - local: "yaml-files/analysissuites/samtools-deploy.yaml"
 
-
-#####################
-# Peaks callers
-#####################
-
-include:
+  #####################
+  # Mapping
+  #####################
+  - local: "yaml-files/mapping/bowtie2-deploy.yaml"
+  
+   #####################
+   # Peaks callers
+   #####################
   - local: "yaml-files/peakcallers/hiddendomains-deploy.yaml"
   - local: "yaml-files/peakcallers/macs2-deploy.yaml"
+
+   #####################
+   # Others
+   #####################
+  - local: "yaml-files/image-analysis/deeplabcut-deploy.yaml"
+

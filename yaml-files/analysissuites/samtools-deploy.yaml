@@ -7,3 +7,13 @@ samtools-114-builddeploy:
   only:
     changes:
       - recipes/analysissuites/samtools/Singularity.samtools-114
+
+samtools-114-builddeploy:
+  extends: .templateBuildDeploy
+  variables:
+    BASENAME: samtools
+    TAG: 115
+    RECIPE_PATH: recipes/analysissuites/samtools
+  only:
+    changes:
+      - recipes/analysissuites/samtools/Singularity.samtools-115
