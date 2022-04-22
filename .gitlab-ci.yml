@@ -41,10 +41,8 @@ parallelfastqdump-063-test:
   extends: .templateTest
   variables:
     BASENAME: parallelfastqdump
-    TAG: 063
+    TAG: v063
     RECIPE_PATH: recipes/fastq-operations/parallelfastqdump
-
-
 
 #####################
 ## Include
