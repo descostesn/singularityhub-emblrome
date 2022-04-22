@@ -60,21 +60,21 @@ include:
   - local: "yaml-files/mapping/bowtie2-deploy.yaml"
 
 
-#####################
-# Analysis suites
-#####################
+
+
+
+
 
 
 include:
-  - local: "yaml-files/analysissuites/deeptools-deploy.yaml"
-
-
-
-#####################
-# Peaks callers
-#####################
-
-include:
+   #####################
+   # Peaks callers
+   #####################
   - local: "yaml-files/peakcallers/hiddendomains-deploy.yaml"
   - local: "yaml-files/peakcallers/macs2-deploy.yaml"
+  
+  #####################
+  # Analysis suites
+  #####################
+  - local: "yaml-files/analysissuites/deeptools-deploy.yaml"
   - local: "yaml-files/analysissuites/samtools-deploy.yaml"
