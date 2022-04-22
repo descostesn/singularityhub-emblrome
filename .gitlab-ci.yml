@@ -36,11 +36,11 @@ image:
 
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
 
-picardtools-2227-test:
+picardtools-2271-test:
   extends: .templateTest
   variables:
     BASENAME: picardtools
-    TAG: 2227
+    TAG: 2271
     RECIPE_PATH: recipes/analysissuites/picardtools
 
 #####################
