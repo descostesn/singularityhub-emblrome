@@ -36,12 +36,14 @@ image:
 
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
 
+
 parallelfastqdump-063-test:
   extends: .templateTest
   variables:
     BASENAME: parallelfastqdump
     TAG: 063
     RECIPE_PATH: recipes/fastq-operations/parallelfastqdump
+
 
 
 #####################
