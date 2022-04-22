@@ -67,7 +67,7 @@ include:
 
 include:
   - local: "yaml-files/analysissuites/deeptools-deploy.yaml"
-  - local: "yaml-files/analysissuites/samtools-deploy.yaml"
+
 
 
 #####################
@@ -77,3 +77,4 @@ include:
 include:
   - local: "yaml-files/peakcallers/hiddendomains-deploy.yaml"
   - local: "yaml-files/peakcallers/macs2-deploy.yaml"
+  - local: "yaml-files/analysissuites/samtools-deploy.yaml"
