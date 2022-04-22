@@ -1,0 +1,9 @@
+parallelfastqdump-063-builddeploy:
+  extends: .templateBuildDeploy
+  variables:
+    BASENAME: parallelfastqdump
+    TAG: v063
+    RECIPE_PATH: recipes/fastq-operations/parallelfastqdump
+  only:
+    changes:
+      - recipes/fastq-operations/parallelfastqdump/Singularity.parallelfastqdump-v063
