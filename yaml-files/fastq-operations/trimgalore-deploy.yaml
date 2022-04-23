@@ -1,0 +1,9 @@
+trimgalore-067-builddeploy:
+  extends: .templateBuildDeploy
+  variables:
+    BASENAME: trimgalore
+    TAG: v067
+    RECIPE_PATH: recipes/fastq-operations/trimgalore
+  only:
+    changes:
+      - recipes/fastq-operations/trimgalore/Singularity.trimgalore-v067
