@@ -37,6 +37,14 @@ image:
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
 
 
+snakemakeChIPSeq-v001-test:
+  extends: .templateTest
+  variables:
+    BASENAME: snakemakeChIPSeq
+    TAG: v001
+    RECIPE_PATH: recipes/R-packages/snakemake-pipelines/ChIPSeq
+
+
 #####################
 ## Include
 #####################
