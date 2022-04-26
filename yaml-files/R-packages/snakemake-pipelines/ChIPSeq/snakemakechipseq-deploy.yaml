@@ -1,0 +1,9 @@
+snakemakechipseq-v001-builddeploy:
+  extends: .templateBuildDeploy
+  variables:
+    BASENAME: snakemakeChIPSeq
+    TAG: v001
+    RECIPE_PATH: recipes/R-packages/snakemake-pipelines/ChIPSeq
+  only:
+    changes:
+      - recipes/R-packages/snakemake-pipelines/ChIPSeq/Singularity.snakemakeChIPSeq-v001
