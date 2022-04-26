@@ -37,14 +37,6 @@ image:
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
 
 
-trimgalore-067-test:
-  extends: .templateTest
-  variables:
-    BASENAME: trimgalore
-    TAG: v067
-    RECIPE_PATH: recipes/fastq-operations/trimgalore
-
-
 #####################
 ## Include
 #####################
@@ -60,6 +52,7 @@ include:
   # fastq operations
   #####################
   - local: "yaml-files/fastq-operations/parallelfastqdump-deploy.yaml"
+  - local: "yaml-files/fastq-operations/trimgalore-deploy.yaml"
 
   #####################
   # Analysis suites
