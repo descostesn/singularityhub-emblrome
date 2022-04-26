@@ -37,14 +37,6 @@ image:
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
 
 
-bowtie2samtools-v245v115-test:
-  extends: .templateTest
-  variables:
-    BASENAME: bowtie2samtools
-    TAG: v245v115
-    RECIPE_PATH: recipes/mapping/bowtie2samtools
-
-
 #####################
 ## Include
 #####################
@@ -73,6 +65,7 @@ include:
   # Mapping
   #####################
   - local: "yaml-files/mapping/bowtie2-deploy.yaml"
+  - local: "yaml-files/mapping/bowtie2samtools-deploy.yaml"
   
    #####################
    # Peaks callers
