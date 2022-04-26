@@ -1,6 +1,6 @@
-snakemakeChIPSeq-v001-test:
+snakemakechipseq-v001-test:
   extends: .templateTest
   variables:
-    BASENAME: snakemakeChIPSeq
+    BASENAME: snakemakechipseq
     TAG: v001
-    RECIPE_PATH: recipes/R-packages/snakemake-pipelines/ChIPSeq
+    RECIPE_PATH: recipes/rpackages/snakemake-pipelines/chipseq
