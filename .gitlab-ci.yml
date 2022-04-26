@@ -76,7 +76,7 @@ include:
    #####################
    # R packages
    #####################
-  - local: "yaml-files/R-packages/snakemake-pipelines/ChIPSeq/snakemakechipseq-deploy.yaml"
+  - local: "yaml-files/rpackages/snakemake-pipelines/chipseq/snakemakechipseq-deploy.yaml"
 
    #####################
    # Others
