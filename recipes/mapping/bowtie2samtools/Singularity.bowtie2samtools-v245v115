@@ -68,6 +68,7 @@ Stage: release
 
 %environment
   export LC_ALL=C
+  export PATH="${PATH}:/usr/bin/bin"
 
 %post
   apt-get update
