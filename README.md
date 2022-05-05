@@ -19,7 +19,7 @@ This repository aims at sharing singularity images among the EMBL community. We 
 
 To pull an existing singularity, first have a look at the image of interest in the list [here](https://git.embl.de/descoste/singularityhub-emblrome/container_registry) or in this [folder](https://git.embl.de/descoste/singularityhub-emblrome/-/tree/main/recipes). 
 
-Copy the script below in a `download.sh` file and run the command: `bash dowload.sh username containername imagename`. For example, `bash download.sh descoste fastqcv0019.sif 'fastqc:0119'`.
+Copy the script below in a `download.sh` file and run the command: `bash dowload.sh username containername imagename`. For example, `bash download.sh descoste fastqcv0019.sif 'fastqc:0119cv8'`.
 
 ```
 #!/usr/bin/bash
