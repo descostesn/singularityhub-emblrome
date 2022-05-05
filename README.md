@@ -44,6 +44,10 @@ singularity pull --docker-username $USERNAME --docker-password $SINGULARITY_DOCK
 9) After closing your editor, run `exec bash`.
 10) Now try to pull a particular singularity following the instructions above.
 
+If it does not work please do:
+
+1) Add the remote: `singularity remote add --no-login embl https://git.embl.de:4567`
+2) Use the remote: `singularity remote use embl`
 
 ## Contributing
 
