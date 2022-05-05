@@ -50,6 +50,7 @@ If it does not work please do:
 
 1) Add the remote: `singularity remote add --no-login embl https://git.embl.de:4567`
 2) Use the remote: `singularity remote use embl`
+3) Log to the remote: `singularity remote login oras://git.embl.de:4567`
 
 
 ## Contributing
