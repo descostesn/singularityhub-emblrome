@@ -83,11 +83,14 @@ toolName-tag-test:
   variables:
     BASENAME: toolName
     TAG: tag
-    RECIPE_PATH: recipes/path_to_recipe_folder
+    RECIPE_PATH: recipes/path_to_recipe_folder_without_file
 ```
 
-For instance, if you want to submit fastqc version 0119cv8, your rule name will be `fastqc-0119cv8-test` and the path to the recipe `/g/romebioinfo/tmp/singularityhub-emblrome/recipes/quality-control/fastqc`.
+For instance, if you want to submit fastqc version 0119cv8, your rule name will be `fastqc-0119cv8-test` and the path to the recipe `recipes/quality-control/fastqc`. 
 
+**Note 1:** There is no slash at the end of the path and the file name is **not** precised.
+
+**Note 2:** The BASENAME and the TAG are used to create the file name (Singularity.BASENAME-TAG). Please verify that it matches.
 
 8) In the following instruction, **please add toolName-tag-test` as a commit message**.
 9) Push the file `.gitlab-ci.yml` to the repository: `git add .gitlab-ci.yml && git commit -m "toolName-tag-test" && git push origin submission`.
