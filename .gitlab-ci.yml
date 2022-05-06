@@ -37,6 +37,14 @@ image:
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
 
 
+mosaic-03-test:
+  extends: .templateTest
+  variables:
+    BASENAME: mosaic
+    TAG: v03
+    RECIPE_PATH: recipes/single-cell-genomics/mosaic
+
+
 #####################
 ## Include
 #####################
