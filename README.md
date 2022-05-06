@@ -75,7 +75,7 @@ toolName-tag-test:
   variables:
     BASENAME: toolName
     TAG: tag
-    RECIPE_PATH: path_to_recipe_folder
+    RECIPE_PATH: recipes/path_to_recipe_folder
 ```
 
 For instance, if you want to submit fastqc version 0119cv8, your rule name will be `fastqc-0119cv8-test` and the path to the recipe `/g/romebioinfo/tmp/singularityhub-emblrome/recipes/quality-control/fastqc`.
