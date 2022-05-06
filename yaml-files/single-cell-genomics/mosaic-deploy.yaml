@@ -1,0 +1,9 @@
+mosaic-03-builddeploy:
+  extends: .templateBuildDeploy
+  variables:
+    BASENAME: mosaic
+    TAG: v03
+    RECIPE_PATH: recipes/single-cell-genomics/mosaic
+  only:
+    changes:
+      - recipes/single-cell-genomics/mosaic/Singularity.mosaic-v03

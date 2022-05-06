@@ -1,0 +1,6 @@
+mosaic-03-test:
+  extends: .templateTest
+  variables:
+    BASENAME: mosaic
+    TAG: v03
+    RECIPE_PATH: recipes/single-cell-genomics/mosaic
