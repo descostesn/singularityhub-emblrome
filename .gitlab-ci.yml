@@ -42,7 +42,7 @@ mosaic-03-test:
   variables:
     BASENAME: mosaic
     TAG: v03
-    RECIPE_PATH: /g/romebioinfo/tmp/singularityhub-emblrome/recipes/single-cell-genomics/mosaic/Singularity.mosaic-03
+    RECIPE_PATH: recipes/single-cell-genomics/mosaic/Singularity.mosaic-03
 
 
 #####################
