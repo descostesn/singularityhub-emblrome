@@ -1,0 +1,6 @@
+trimgalore-067-test:
+  extends: .templateTest
+  variables:
+    BASENAME: trimgalore
+    TAG: v067
+    RECIPE_PATH: recipes/fastq-operations/trimgalore

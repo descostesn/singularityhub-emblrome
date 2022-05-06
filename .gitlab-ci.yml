@@ -38,42 +38,48 @@ image:
 
 
 #####################
-# Image analysis
+## Include
 #####################
 
 include:
-  - local: "yaml-files/image-analysis/deeplabcut-deploy.yaml"
 
-#####################
-# Quality control
-#####################
-
-include:
+  #####################
+  # Quality control
+  #####################
   - local: "yaml-files/quality-control/fastqc-deploy.yaml"
 
+  #####################
+  # fastq operations
+  #####################
+  - local: "yaml-files/fastq-operations/parallelfastqdump-deploy.yaml"
+  - local: "yaml-files/fastq-operations/trimgalore-deploy.yaml"
 
-#####################
-# Mapping
-#####################
-
-include:
-  - local: "yaml-files/mapping/bowtie2-deploy.yaml"
-
-
-#####################
-# Analysis suites
-#####################
-
-
-include:
+  #####################
+  # Analysis suites
+  #####################
   - local: "yaml-files/analysissuites/deeptools-deploy.yaml"
   - local: "yaml-files/analysissuites/samtools-deploy.yaml"
+  - local: "yaml-files/analysissuites/picardtools-deploy.yaml"
 
-
-#####################
-# Peaks callers
-#####################
-
-include:
+  #####################
+  # Mapping
+  #####################
+  - local: "yaml-files/mapping/bowtie2-deploy.yaml"
+  - local: "yaml-files/mapping/bowtie2samtools-deploy.yaml"
+  
+   #####################
+   # Peaks callers
+   #####################
   - local: "yaml-files/peakcallers/hiddendomains-deploy.yaml"
   - local: "yaml-files/peakcallers/macs2-deploy.yaml"
+
+   #####################
+   # R packages
+   #####################
+  - local: "yaml-files/rpackages/snakemake-pipelines/chipseq/snakemakechipseq-deploy.yaml"
+
+   #####################
+   # Others
+   #####################
+  - local: "yaml-files/image-analysis/deeplabcut-deploy.yaml"
+

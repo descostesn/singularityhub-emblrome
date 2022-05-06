@@ -1,0 +1,19 @@
+picardtools-2221-builddeploy:
+  extends: .templateBuildDeploy
+  variables:
+    BASENAME: picardtools
+    TAG: 2221
+    RECIPE_PATH: recipes/analysissuites/picardtools
+  only:
+    changes:
+      - recipes/analysissuites/picardtools/Singularity.picardtools-2221
+
+picardtools-2271-builddeploy:
+  extends: .templateBuildDeploy
+  variables:
+    BASENAME: picardtools
+    TAG: 2271
+    RECIPE_PATH: recipes/analysissuites/picardtools
+  only:
+    changes:
+      - recipes/analysissuites/picardtools/Singularity.picardtools-2271
