@@ -37,14 +37,6 @@ image:
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
 
 
-mosaic-03-test:
-  extends: .templateTest
-  variables:
-    BASENAME: mosaic
-    TAG: v03
-    RECIPE_PATH: recipes/single-cell-genomics/mosaic
-
-
 #####################
 ## Include
 #####################
@@ -85,6 +77,12 @@ include:
    # R packages
    #####################
   - local: "yaml-files/rpackages/snakemake-pipelines/chipseq/snakemakechipseq-deploy.yaml"
+  
+   #####################
+   # Single cell genomics
+   #####################
+   
+  - local: "yaml-files/single-cell-genomics/mosaic-deploy.yaml"
 
    #####################
    # Others
