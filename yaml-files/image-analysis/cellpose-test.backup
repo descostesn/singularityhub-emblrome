@@ -1,0 +1,6 @@
+cellpose-2.0.5-test:
+  extends: .templateTest
+  variables:
+    BASENAME: cellpose
+    TAG: 2.0.5
+    RECIPE_PATH: recipes/image-analysis/cellpose
