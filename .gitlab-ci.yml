@@ -35,12 +35,6 @@ image:
 #####################
 
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
-cellpose-2.0.5-test:
-  extends: .templateTest
-  variables:
-    BASENAME: cellpose
-    TAG: 2.0.5
-    RECIPE_PATH: recipes/image-analysis/cellpose
 
 
 #####################
@@ -91,7 +85,8 @@ include:
   - local: "yaml-files/single-cell-genomics/mosaic-deploy.yaml"
 
    #####################
-   # Others
+   # Image analysis
    #####################
   - local: "yaml-files/image-analysis/deeplabcut-deploy.yaml"
+  - local: "yaml-files/image-analysis/cellpose-deploy.yaml"
 
