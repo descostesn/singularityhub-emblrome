@@ -35,13 +35,12 @@ image:
 #####################
 
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
-cellpose-2.0.5-test:
+chimerax-1.3-test:
   extends: .templateTest
   variables:
-    BASENAME: cellpose
-    TAG: 2.0.5
-    RECIPE_PATH: recipes/image-analysis/cellpose
-
+    BASENAME: chimerax
+    TAG: 1.3
+    RECIPE_PATH: recipes/image-analysis/chimerax
 
 #####################
 ## Include
