@@ -35,12 +35,7 @@ image:
 #####################
 
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
-chimerax-1.3-test:
-  extends: .templateTest
-  variables:
-    BASENAME: chimerax
-    TAG: 1.3
-    RECIPE_PATH: recipes/image-analysis/chimerax
+
 
 #####################
 ## Include
@@ -90,7 +85,8 @@ include:
   - local: "yaml-files/single-cell-genomics/mosaic-deploy.yaml"
 
    #####################
-   # Others
+   # Image analysis
    #####################
   - local: "yaml-files/image-analysis/deeplabcut-deploy.yaml"
+  - local: "yaml-files/image-analysis/cellpose-deploy.yaml"
 

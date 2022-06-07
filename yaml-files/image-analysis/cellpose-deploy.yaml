@@ -1,0 +1,9 @@
+cellpose-2.0.5-builddeploy:
+  extends: .templateBuildDeploy
+  variables:
+    BASENAME: cellpose
+    TAG: 2.0.5
+    RECIPE_PATH: recipes/image-analysis/cellpose
+  only:
+    changes:
+      - recipes/image-analysis/cellpose/Singularity.cellpose-2.0.5
