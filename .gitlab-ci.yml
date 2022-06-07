@@ -36,13 +36,6 @@ image:
 
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
 
-alpine-3160-test:
-  extends: .templateTest
-  variables:
-    BASENAME: alpine
-    TAG: 3160
-    RECIPE_PATH: recipes/os-environments/alpine
-
 
 #####################
 ## Include
@@ -97,3 +90,7 @@ include:
   - local: "yaml-files/image-analysis/deeplabcut-deploy.yaml"
   - local: "yaml-files/image-analysis/cellpose-deploy.yaml"
 
+   #####################
+   # Os environments
+   #####################
+  - local: "yaml-files/os-environments/alpine-deploy.yaml"
