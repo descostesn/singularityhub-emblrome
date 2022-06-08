@@ -5,9 +5,16 @@ From: alpine:3.16.0
 
     This singularity installs alpine with a minimal setup for scripting. Tools can be added on demand.
 
+%runscript
+    echo "Running container alpine:3.16.0"
+    exec /bin/bash "$@"
+
 %post
     # ~~~~~~ General setup ~~~~~~ #
     apk update && apk add wget gzip
+
+%environment
+    export PATH="${PATH}:/bin/sh"
 
 %labels
   Author Descostes
