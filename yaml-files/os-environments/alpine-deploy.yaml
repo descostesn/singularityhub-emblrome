@@ -1,0 +1,9 @@
+alpine-3160-builddeploy:
+  extends: .templateBuildDeploy
+  variables:
+    BASENAME: alpine
+    TAG: 3160
+    RECIPE_PATH: recipes/os-environments/alpine
+  only:
+    changes:
+      - recipes/os-environments/alpine/Singularity.alpine-3160
