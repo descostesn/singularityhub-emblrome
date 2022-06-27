@@ -1,0 +1,6 @@
+bedops-2440-test:
+  extends: .templateTest
+  variables:
+    BASENAME: bedops
+    TAG: 2440
+    RECIPE_PATH: recipes/analysissuites/bedops
