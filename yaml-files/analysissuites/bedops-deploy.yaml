@@ -1,0 +1,9 @@
+bedops-2440-builddeploy:
+  extends: .templateBuildDeploy
+  variables:
+    BASENAME: bedops
+    TAG: 2440
+    RECIPE_PATH: recipes/analysissuites/bedops
+  only:
+    changes:
+      - recipes/analysissuites/bedops/Singularity.bedops-2440

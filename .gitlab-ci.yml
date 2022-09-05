@@ -36,13 +36,6 @@ image:
 
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
 
-bedops-2440-test:
-  extends: .templateTest
-  variables:
-    BASENAME: bedops
-    TAG: 2440
-    RECIPE_PATH: recipes/analysissuites/bedops
-
 #####################
 ## Include
 #####################
@@ -66,6 +59,7 @@ include:
   - local: "yaml-files/analysissuites/deeptools-deploy.yaml"
   - local: "yaml-files/analysissuites/samtools-deploy.yaml"
   - local: "yaml-files/analysissuites/picardtools-deploy.yaml"
+  - local: "yaml-files/analysissuites/bedops-deploy.yaml"
 
   #####################
   # Mapping
