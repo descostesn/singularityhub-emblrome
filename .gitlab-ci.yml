@@ -35,6 +35,12 @@ image:
 #####################
 
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
+bedr-107-test:
+  extends: .templateTest
+  variables:
+    BASENAME: bedr
+    TAG: 107
+    RECIPE_PATH: recipes/rpackages/bedtools
 
 #####################
 ## Include
