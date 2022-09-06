@@ -1,0 +1,13 @@
+picardtools-2221-test:
+  extends: .templateTest
+  variables:
+    BASENAME: picardtools
+    TAG: 2221
+    RECIPE_PATH: recipes/analysissuites/picardtools
+
+picardtools-2271-test:
+  extends: .templateTest
+  variables:
+    BASENAME: picardtools
+    TAG: 2271
+    RECIPE_PATH: recipes/analysissuites/picardtools

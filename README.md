@@ -19,7 +19,7 @@ This repository aims at sharing singularity images among the EMBL community. We 
 
 To pull an existing singularity, first have a look at the image of interest in the list [here](https://git.embl.de/descoste/singularityhub-emblrome/container_registry) or in this [folder](https://git.embl.de/descoste/singularityhub-emblrome/-/tree/main/recipes). 
 
-Copy the script below in a `download.sh` file and run the command: `bash dowload.sh username containername imagename`. For example, `bash download.sh descoste fastqcv0019.sif 'fastqc:0119'`.
+Copy the script below in a `download.sh` file and run the command: `bash dowload.sh username containername imagename`. For example, `bash download.sh descoste fastqcv0019cv8.sif 'fastqc:0119cv8'`.
 
 ```
 #!/usr/bin/bash
@@ -43,6 +43,14 @@ singularity pull --docker-username $USERNAME --docker-password $SINGULARITY_DOCK
 8) Edit your `.bashrc` (`emacs -nw ~/.bashrc` or `vim ~/.bashrc`) by adding `export SINGULARITY_DOCKER_PASSWORD="paste_your_copied_access_token_here"` wherever you like.
 9) After closing your editor, run `exec bash`.
 10) Now try to pull a particular singularity following the instructions above.
+
+**Note**: Make sure that you do use bash and not something else like zsh.
+
+If it does not work please do:
+
+1) Add the remote: `singularity remote add --no-login embl https://git.embl.de:4567`
+2) Use the remote: `singularity remote use embl`
+3) Log to the remote: `singularity remote login oras://git.embl.de:4567`
 
 
 ## Contributing
@@ -75,11 +83,14 @@ toolName-tag-test:
   variables:
     BASENAME: toolName
     TAG: tag
-    RECIPE_PATH: path_to_recipe_folder
+    RECIPE_PATH: recipes/path_to_recipe_folder_without_file
 ```
 
-For instance, if you want to submit fastqc version 0119cv8, your rule name will be `fastqc-0119cv8-test` and the path to the recipe `/g/romebioinfo/tmp/singularityhub-emblrome/recipes/quality-control/fastqc`.
+For instance, if you want to submit fastqc version 0119cv8, your rule name will be `fastqc-0119cv8-test` and the path to the recipe `recipes/quality-control/fastqc`. 
 
+**Note 1:** There is no slash at the end of the path and the file name is **not** precised.
+
+**Note 2:** The BASENAME and the TAG are used to create the file name (Singularity.BASENAME-TAG). Please verify that it matches.
 
 8) In the following instruction, **please add toolName-tag-test` as a commit message**.
 9) Push the file `.gitlab-ci.yml` to the repository: `git add .gitlab-ci.yml && git commit -m "toolName-tag-test" && git push origin submission`.
