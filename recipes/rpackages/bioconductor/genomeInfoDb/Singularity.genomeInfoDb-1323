@@ -3,7 +3,7 @@ From: ubuntu:bionic
 
 %help
 
-    This singularity installs R v 4.2.1 and the genomeInfoDb package
+    This singularity installs R v 4.1.1 and required packages
 
 %post
     # ~~~~~~ General setup and folder creation ~~~~~~ #
@@ -26,10 +26,10 @@ From: ubuntu:bionic
     export PATH="/conda/bin:${PATH}"
     
     # ~~~~~ R v 4.1.1 ~~~~~ #
-    conda install -c conda-forge r-base=4.2.1
+    conda install -c conda-forge r-base=4.1.1
     
     # ~~~~~ R packages ~~~~~ #
-    R --slave -e 'install.packages("BiocManager", "RCurl", repos="https://cloud.r-project.org/")'
+    R --slave -e 'install.packages("BiocManager", repos="https://cloud.r-project.org/")'
     R --slave -e 'BiocManager::install("GenomeInfoDb")'
     
 %environment
