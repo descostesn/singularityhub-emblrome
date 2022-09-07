@@ -1,0 +1,9 @@
+genomeInfoDb-1323-builddeploy:
+  extends: .templateBuildDeploy
+  variables:
+    BASENAME: genomeInfoDb
+    TAG: 1323
+    RECIPE_PATH: recipes/rpackages/bioconductor/genomeInfoDb
+  only:
+    changes:
+      - recipes/rpackages/bioconductor/genomeInfoDb/Singularity.genomeInfoDb-1323
