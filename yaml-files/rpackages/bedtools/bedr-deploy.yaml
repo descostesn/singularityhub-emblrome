@@ -1,0 +1,9 @@
+bedr-107-builddeploy:
+  extends: .templateBuildDeploy
+  variables:
+    BASENAME: bedr
+    TAG: 107
+    RECIPE_PATH: recipes/rpackages/bedtools
+  only:
+    changes:
+      - recipes/rpackages/bedtools/Singularity.bedr-107
