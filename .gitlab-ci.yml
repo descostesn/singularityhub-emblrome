@@ -36,6 +36,13 @@ image:
 
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
 
+genomeInfoDb-1323-test:
+  extends: .templateTest
+  variables:
+    BASENAME: genomeInfoDb
+    TAG: 1323
+    RECIPE_PATH: recipes/rpackages/bioconductor/genomeInfoDb
+
 #####################
 ## Include
 #####################
