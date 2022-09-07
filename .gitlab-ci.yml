@@ -79,7 +79,7 @@ include:
    #####################
   - local: "yaml-files/rpackages/snakemake-pipelines/chipseq/snakemakechipseq-deploy.yaml"
   - local: "yaml-files/rpackages/bedtools/bedr-deploy.yaml"
-  - local: "yaml-files/rpackages/bioconductor/genomeInfoDb/genomeInfoDb-deploy.yaml"
+  - local: "yaml-files/rpackages/bioconductor/genomeinfodb/genomeinfodb-deploy.yaml"
   
    #####################
    # Single cell genomics

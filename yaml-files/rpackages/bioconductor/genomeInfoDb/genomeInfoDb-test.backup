@@ -1,6 +1,0 @@
-genomeInfoDb-1323-test:
-  extends: .templateTest
-  variables:
-    BASENAME: genomeInfoDb
-    TAG: 1323
-    RECIPE_PATH: recipes/rpackages/bioconductor/genomeInfoDb
