@@ -29,7 +29,7 @@ From: ubuntu:bionic
     conda install -c conda-forge r-base=4.2.1
     
     # ~~~~~ R packages ~~~~~ #
-    R --slave -e 'install.packages("BiocManager", repos="https://cloud.r-project.org/")'
+    R --slave -e 'install.packages("BiocManager", "RCurl", repos="https://cloud.r-project.org/")'
     R --slave -e 'BiocManager::install("GenomeInfoDb")'
     
 %environment
