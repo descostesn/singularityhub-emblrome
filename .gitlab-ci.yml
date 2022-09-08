@@ -80,7 +80,7 @@ include:
   - local: "yaml-files/rpackages/snakemake-pipelines/chipseq/snakemakechipseq-deploy.yaml"
   - local: "yaml-files/rpackages/bedtools/bedr-deploy.yaml"
   - local: "yaml-files/rpackages/bioconductor/genomeinfodb/genomeinfodb-deploy.yaml"
-  - local: "yaml-files/rpackages/bioconductor/genomicranges/genomeicranges-deploy.yaml"
+  - local: "yaml-files/rpackages/bioconductor/genomicranges/genomicranges-deploy.yaml"
   
    #####################
    # Single cell genomics
