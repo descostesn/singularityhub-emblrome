@@ -1,0 +1,9 @@
+genomicranges-1480-builddeploy:
+  extends: .templateBuildDeploy
+  variables:
+    BASENAME: genomicranges
+    TAG: 1480
+    RECIPE_PATH: recipes/rpackages/bioconductor/genomicranges
+  only:
+    changes:
+      - recipes/rpackages/bioconductor/genomicranges/Singularity.genomicranges-1480
