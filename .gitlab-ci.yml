@@ -36,6 +36,12 @@ image:
 
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
 
+genomicranges-1480-test:
+  extends: .templateTest
+  variables:
+    BASENAME: genomicranges
+    TAG: 1480
+    RECIPE_PATH: recipes/rpackages/bioconductor/genomicranges
 
 #####################
 ## Include
