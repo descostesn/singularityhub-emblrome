@@ -36,12 +36,6 @@ image:
 
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
 
-genomicranges-1480-test:
-  extends: .templateTest
-  variables:
-    BASENAME: genomicranges
-    TAG: 1480
-    RECIPE_PATH: recipes/rpackages/bioconductor/genomicranges
 
 #####################
 ## Include
@@ -86,6 +80,7 @@ include:
   - local: "yaml-files/rpackages/snakemake-pipelines/chipseq/snakemakechipseq-deploy.yaml"
   - local: "yaml-files/rpackages/bedtools/bedr-deploy.yaml"
   - local: "yaml-files/rpackages/bioconductor/genomeinfodb/genomeinfodb-deploy.yaml"
+  - local: "yaml-files/rpackages/bioconductor/genomicranges/genomeicranges-deploy.yaml"
   
    #####################
    # Single cell genomics
