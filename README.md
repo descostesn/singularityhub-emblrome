@@ -1,4 +1,4 @@
-# singularityhub EMBL Rome
+# singularityhub EMBL Rome (Gitlab version)
 
 
 1. [Introduction](#introduction) 
