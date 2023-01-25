@@ -9,7 +9,7 @@ From: ubuntu:22.10
 %post
     # ~~~~~~ General setup and folder creation ~~~~~~ #
     
-    apt update && apt install -y gcc git libz-dev make r-base curl samtools software-properties-common gawk bash
+    DEBIAN_FRONTEND=noninteractive apt update && apt install -y gcc git libz-dev make r-base curl samtools software-properties-common gawk bash
     
     export LC_ALL=C
     export LC_CTYPE=C 
@@ -19,14 +19,13 @@ From: ubuntu:22.10
     export LC_MONETARY=C
     export LC_PAPER=C 
     export LC_MEASUREMENT=C
-    export DEBIAN_FRONTEND=noninteractive
     
     # ~~~~~ seqcode ~~~~~ #
     curl -L https://github.com/eblancoga/seqcode/archive/master.tar.gz -o seqcode.tar.gz && tar -xvzf seqcode.tar.gz && rm seqcode.tar.gz && cd seqcode-main/ && make all && cd ..
     export PATH="seqcode-main/bin:${PATH}"
     
     # ~~~~~ samtools ~~~~~ #
-    add-apt-repository universe && apt update && apt install -y samtools
+    DEBIAN_FRONTEND=noninteractive add-apt-repository universe && apt update && apt install -y samtools
     
     # ~~~~~ affy and MASS ~~~~~ #
     R --slave -e 'install.packages(c("BiocManager", "MASS"), repos="https://cloud.r-project.org/")' && R --slave -e 'BiocManager::install(c("affy"))'
