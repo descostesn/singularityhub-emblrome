@@ -19,6 +19,7 @@ From: ubuntu:22.10
     export LC_MONETARY=C
     export LC_PAPER=C 
     export LC_MEASUREMENT=C
+    export DEBIAN_FRONTEND=noninteractive
     
     # ~~~~~ seqcode ~~~~~ #
     curl -L https://github.com/eblancoga/seqcode/archive/master.tar.gz -o seqcode.tar.gz && tar -xvzf seqcode.tar.gz && rm seqcode.tar.gz && cd seqcode-main/ && make all && cd ..
