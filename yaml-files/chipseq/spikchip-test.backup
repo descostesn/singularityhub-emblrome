@@ -1,0 +1,6 @@
+spikchip-v099-test:
+  extends: .templateTest
+  variables:
+    BASENAME: spikchip
+    TAG: v099
+    RECIPE_PATH: recipes/chipseq/spikchip
