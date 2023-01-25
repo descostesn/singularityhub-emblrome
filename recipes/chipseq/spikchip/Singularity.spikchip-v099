@@ -45,6 +45,7 @@ From: ubuntu:22.10
     export LC_MONETARY=C
     export LC_PAPER=C 
     export LC_MEASUREMENT=C
+    export DEBIAN_FRONTEND=noninteractive
 
 %labels
     Author Nicolas Descostes
