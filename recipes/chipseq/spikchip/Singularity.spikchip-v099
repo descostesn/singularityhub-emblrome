@@ -48,3 +48,4 @@ From: ubuntu:22.10
 %labels
     Author Nicolas Descostes
     Version v0.0.1
+
