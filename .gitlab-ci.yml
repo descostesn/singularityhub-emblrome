@@ -98,3 +98,8 @@ include:
    # Os environments
    #####################
   - local: "yaml-files/os-environments/alpine-deploy.yaml"
+
+   #####################
+   # chipseq
+   #####################
+  - local: "yaml-files/chipseq/spikchip-deploy.yaml"
