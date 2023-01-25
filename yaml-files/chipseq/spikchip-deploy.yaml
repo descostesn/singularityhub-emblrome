@@ -1,0 +1,9 @@
+spikchip-v099-builddeploy:
+  extends: .templateBuildDeploy
+  variables:
+    BASENAME: spikchip
+    TAG: v099
+    RECIPE_PATH: recipes/chipseq/spikchip
+  only:
+    changes:
+      - recipes/chipseq/spikchip/Singularity.spikchip-v099
