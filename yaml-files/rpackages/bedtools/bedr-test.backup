@@ -1,0 +1,6 @@
+bedr-107-test:
+  extends: .templateTest
+  variables:
+    BASENAME: bedr
+    TAG: 107
+    RECIPE_PATH: recipes/rpackages/bedtools

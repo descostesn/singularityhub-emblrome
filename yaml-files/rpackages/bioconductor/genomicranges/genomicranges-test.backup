@@ -1,0 +1,6 @@
+genomicranges-1480-test:
+  extends: .templateTest
+  variables:
+    BASENAME: genomicranges
+    TAG: 1480
+    RECIPE_PATH: recipes/rpackages/bioconductor/genomicranges
