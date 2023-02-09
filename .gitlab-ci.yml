@@ -103,3 +103,5 @@ include:
    # chipseq
    #####################
   - local: "yaml-files/chipseq/spikchip-deploy.yaml"
+  - local: "yaml-files/chipseq/spikchipcustom-deploy.yaml"
+
