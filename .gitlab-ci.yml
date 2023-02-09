@@ -35,6 +35,12 @@ image:
 #####################
 
 ## WRITE YOUR TEST RULE HERE AFTER BRANCHING ON SUBMISSION AND CREATE A MERGE REQUEST
+spikchipcustom-v099-test:
+  extends: .templateTest
+  variables:
+    BASENAME: spikchipcustom
+    TAG: v099
+    RECIPE_PATH: recipes/chipseq/spikchipcustom
 
 
 #####################
